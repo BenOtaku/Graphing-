@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Graphic calculator</title>
+<!-- favicon -->
+<link rel="icon" type="image/png" href="http://blog.sarahha.com/wp-content/uploads/2015/03/Evans-Pi-1.png">
+<!-- end of  favicon -->
+<!-- Boostrap -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<!-- end of boostrap -->
+
+<style type="text/css">
+body{
+background-image:url("https://s-media-cache-ak0.pinimg.com/originals/c9/a7/37/c9a73763952e72eefaa22ac159c68cb8.jpg");
+}
+.navbar {
+margin-bottom: 0;
+background-color: #000;
+opacity: 0.5;
+z-index: 9999;
+border: 0;
+font-size: 12px !important;
+line-height: 1.42857143 !important;
+letter-spacing: 4px;
+border-radius: 0;
+font-family: Montserrat, sans-serif;
+}
+.navbar li a, .navbar .navbar-brand {
+color:#fff !important;
+}
+.navbar-nav li a:hover, .navbar-nav li.active a {
+color: rgb(178,50,178) !important;
+background-color: #fff !important;
+}
+.navbar-default .navbar-toggle {
+border-color: transparent;
+color: #fff !important;
+}
+body {
+font-family:'Trebuchet Ms',Arial,sans-serif;
+color:#555;
+text-align:center;
+margin:0px;
+}
+h1 a {
+text-decoration:none;
+color:red;
+}
+h1 a:hover {
+color:orange;
+}
+h1 {
+border-bottom:1px solid #ddd;
+font-weight:normal;
+}
+#container {
+background:#f5f5f5;
+margin:0px auto;
+padding:20px;
+padding-top:100px;
+width:500px;
+text-align:left;
+border-style: groove;
+}
+#results{
+color:rgb(178,50,178);
+}
+footer {
+background-color: #2d2d30;
+color: #f5f5f5;
+padding: 32px;
+}
+</style>
+</head>
+
+<body data-spy="scroll" data-target=".navbar" data-offset="60">
+<!-- header -->
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span> </button>
+      <a class="navbar-brand" href="Home.html"><img src="http://blog.sarahha.com/wp-content/uploads/2015/03/Evans-Pi-1.png" width="25px"></a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="Home.html">HOME</a></li>
+        <li><a href="Solve.html">SOLVE</a></li>
+        <li><a href="Graph.html">GRAPH</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<!-- end of header -->
+<br>
+<br>
+<br>
+<!-- Calculator Solver -->
+ <div id="container">
+    <h1>Quadratic Equation Solver</h1>
+    <p>Got bored solving those quadratic equations for math homework? <br />
+       try out this Quadratic Equation Solver...Just enter the values of a (coefficient of x&#178;), b (coefficient of x) and c(constant) and it will calculate the roots for you, give you the type of the roots, the axis of symmetry and vertex...<br />
+       It will also tell you if your equation is wrong and display the value of Discriminant ( D = b&#178;-4ac).<br/>
+       this equation solver calculates the values of the 1st and 2nd root based on the formula : x = -b&#177;(b&#178;-4ac)&#189;/2a
+<!-- Display results -->
+<h1><a href="#" onclick="calculate()" > Click to solve &raquo;&raquo;</a></h1>
+<div id="results">
+<div id="Equation"></div>
+<div id="x1"></div>
+<div id="x2"></div>
+<div id="axis"></div>
+<div id="vertex"></div>
+<div id="Type_root"></div>
+</div>
+</div>
+<!-- end of results -->
+<!-- end of calculator solver -->
+
+<!-- Transfer of JavaScript -->
+<script src="Quadratic.js"></script>
+<!--end of JavaScript -->
+</body>
+</html>
