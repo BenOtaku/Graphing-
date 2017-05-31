@@ -1,79 +1,83 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Graphic calculator</title>
-<!-- favicon -->
-<link rel="icon" type="image/png" href="http://blog.sarahha.com/wp-content/uploads/2015/03/Evans-Pi-1.png">
-<!-- end of  favicon -->
+  <title>Graphic calculator</title>
 <!--Math-->
 <script src="http://cdnjs.cloudflare.com/ajax/libs/mathjs/0.15.0/math.min.js"></script>
-<!-- end of favicon -->
 <!-- JQuery -->
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
-<!-- end of JQuery -->
-<!-- Boostrap -->
+
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
-<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<!-- end of boostrap -->
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 <style type="text/css">
 body{
-background-image:url("https://s-media-cache-ak0.pinimg.com/originals/c9/a7/37/c9a73763952e72eefaa22ac159c68cb8.jpg");
+    background-image:url("https://s-media-cache-ak0.pinimg.com/originals/c9/a7/37/c9a73763952e72eefaa22ac159c68cb8.jpg");
 }
-canvas{
-background-image: url("https://www.geyerinstructional.com/media/product/6bf/502895-static-cling-grid-coordinate-plane-096.jpg");
-}
+canvas{background-image: url("https://www.geyerinstructional.com/media/product/6bf/502895-static-cling-grid-coordinate-plane-096.jpg");}
 header{
-padding:60px;
-margin-bottom: 50px;
-background-color: rgba(0,0,0,0.5);
-color:white;
-font-size:25px;
+  padding:60px;
+  margin-bottom: 50px;
+  background-color: rgba(0,0,0,0.5);
+  color:white;
+  font-size:25px;
 }
 input:focus{color:purple;
 border-radius: 10px;
 }
-#inputField{
-border-radius: 10px;
-}
-#myCanvas{
-color: purple;
-}
+#inputField{border-radius: 10px;}
+#myCanvas{color: purple;}
 .navbar {
-margin-bottom: 0;
-background-color: #000;
-opacity: 0.5;
-z-index: 9999;
-border: 0;
-font-size: 12px !important;
-line-height: 1.42857143 !important;
-letter-spacing: 4px;
-border-radius: 0;
-font-family: Montserrat, sans-serif;
+  margin-bottom: 0;
+  background-color: #000;
+  opacity: 0.5;
+  z-index: 9999;
+  border: 0;
+  font-size: 12px !important;
+  line-height: 1.42857143 !important;
+  letter-spacing: 4px;
+  border-radius: 0;
+  font-family: Montserrat, sans-serif;
 }
 .navbar li a, .navbar .navbar-brand {
-color:#fff !important;
+  color:#fff !important;
 }
 .navbar-nav li a:hover, .navbar-nav li.active a {
-color: rgb(178,50,178) !important;
-background-color: #fff !important;
+  color: rgb(178,50,178) !important;
+  background-color: #fff !important;
 }
 .navbar-default .navbar-toggle {
-border-color: transparent;
-color: #fff !important;
+  border-color: transparent;
+  color: #fff !important;
 }
-footer {
-background-color: #2d2d30;
-color: #f5f5f5;
-padding: 32px;
+.btn {
+    padding: 10px 20px;
+    background-color: #333;
+    color: #f1f1f1;
+    border-radius: 0;
+    transition: .2s;
+}
+.btn:hover, .btn:focus {
+    border: 1px solid #333;
+    background-color: #fff;
+    color: #000;
+}
+.modal-header, h4, .close {
+  background-color: #333;
+  color: #fff !important;
+  text-align: center;
+  font-size: 30px;
+}
+.modal-header, .modal-body {
+  padding: 40px 50px;
 }
 </style>
 
 </head>
-<body data-spy="scroll" data-target=".navbar" data-offset="60">
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
 <!-- header -->
 <nav class="navbar navbar-default navbar-fixed-top">
   <div class="container">
@@ -95,114 +99,45 @@ padding: 32px;
 </nav>
 <!-- end of header -->
 <br>
-<!--Canvas -->
+<!--Input & Canvas -->
 <canvas width="800" height="800" id="myCanvas"></canvas>
-<!-- end of Canvas -->
+<!-- end of Input & Canvas -->
 
-<!-- input -->
+<!-- Help button -->
+<div class="col-md-12">
+   <button class="btn" data-toggle="modal" data-target="#myModal">Need Help?</button>
+</div>
+<!-- end of help button -->
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" role="dialog">
+  <div class="modal-dialog">
+<!-- Modal content-->
+  <div class="modal-content">
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal">×</button>
+      <h4>Help</h4>
+    </div>
+    <div class="modal-body">
+      To use the graphing calculator, Do not input f(x) nor y.<br>
+      if you want a function such as x&#178, you need to input it as x^2.<br>
+      Use "^" for exponent. to multiply use " * " such 2*x.   
+       </div>
+    <div class="modal-footer">
+      <button type="submit" class="btn btn-danger btn-default pull-left" data-dismiss="modal">
+        <span class="glyphicon glyphicon-remove"></span> Cancel
+      </button>
+    </div>
+  </div>
+</div>
+</div>
+<!-- end of Modal-->
+
+<div class="col-md-6">
 <input id="inputField" placeholder="Please enter Function">
-<!-- end of input -->
-
-<!-- Footer -->
-<footer class="text-center">
- <h1>Thank you for your visit!</h1>
-</footer>
-<!-- end of footer -->
-
+</div>
 <!-- Transfer of JavaScript -->
-<script src="Script.js">
-	var canvas = document.getElementById("myCanvas"), c = canvas.getContext("2d"), 
-// n is the number of line segments.
-n=100,
-//define the main window.
-xMin = -10,
-xMax =  10,
-yMin = -10,
-yMax =  10,
-//end of main window
-
-//Graph
-math = mathjs(),
-expr = '',
-scope = { x : 0,  t : 0},
-tree = math.parse(expr, scope),
-// End of graph
-
-//Time
-time = 0,
-timeIncrement = 0.1;
-//End of Time
-
-// The main program
-drawCurve();
-textField();
-startAnimation();
-// End of main program
-
-function drawCurve(){
-var i,xPixel,yPixel,
-// these vary between 0 and 1 
-percentX,percentY,
-//these are in math coordinates
-mathX, mathY;
-//Clear the canvas
-c.clearRect(0 ,0,canvas.width, canvas.height);
-
-c.beginPath();
-
-for(i=0;i<n;i++){
- percentX = i / (n-1);
- mathX = percentX * (xMax - xMin) + xMin;
- mathY = evaluateMathExpr(mathX);
- percentY = (mathY - yMin) / (yMax -yMin);
-
-//Flip to match canvas coordinate.
-percentY = 1 - percentY
-
- xPixel = percentX * canvas.width;
- yPixel = percentY * canvas.height;
- c.lineTo(xPixel,yPixel);
- }
-c.stroke();
-}
-
-function evaluateMathExpr(mathX){
-    scope.x = mathX;
-    scope.t = time;
-	return tree.eval();
-}
-
-function textField(){
- // Make a jQuery selection to access the input DOM element.
-      var input = $('#inputField');
-      // Set the initial text value programmatically using jQuery.
-      input.val(expr);
-      
-      // Listen for changes using jQuery.
-      input.keyup(function (event) {
-        expr = input.val();
-        tree = math.parse(expr, scope);
-        drawCurve();
-      });
-}
-
-function startAnimation(){
-	(function animloop(){
-		requestAnimationFrame(animloop);
-		render();
-	}());
-}
-
-//crazy cool function:
-// sin(x*t + t) * sin(x/3)*10
-
-function render(){
-	//increment time
-	time += timeIncrement;
-	//redraw
-	drawCurve();
-}
-</script>
+<script src="Script.js"></script>
 <!--end of JavaScript -->
 </body>
 </html>
