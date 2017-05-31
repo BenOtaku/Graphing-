@@ -1,6 +1,6 @@
 var canvas = document.getElementById("myCanvas"), c = canvas.getContext("2d"), 
 // n is the number of line segments.
-n=100,
+n=5000,
 //define the main window.
 xMin = -10,
 xMax =  10,
