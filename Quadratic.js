@@ -35,14 +35,6 @@ function calculate(){
         alert("your don't have an input or it is zero so you need to input a number that is greater than zero!");
         return calculate();
         }
-     if(b == 0){
-        alert("your don't have an input or it is zero so you need to input a number that is greater than zero!");
-        return calculate();
-        }
-     if(c == 0){
-        alert("your don't have an input or it is zero so you need to input a number that is greater than zero!");
-        return calculate();
-        }
      if(isNaN(a)){
           alert("Your input is a letter or special key, input a number therefore try again!");
           return calculate();
