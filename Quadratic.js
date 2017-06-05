@@ -27,8 +27,14 @@ function calculate(){
 // End of 1st root.
 // 2nd root:
         x2=-b-dis_sqrt,
-        x2=x2/a2;
+        x2=x2/a2,
 // End of 2nd root.
+// Negative Discriminant:
+       negB= -1 *b,
+// end of Discriminant.
+//Positive Discriminant:
+       posDis = -1 * dis;
+//end of Positive Discriminant.
 
 //check the user's input:
      if(a == 0){
@@ -48,12 +54,11 @@ function calculate(){
           return calculate();
         }
 // end of check user's input.
-
-     if(dis<0){
+ if(dis<0){
 //Display results:
         document.getElementById('Equation').innerHTML='No real roots exist since Discriminant < 0, which mean complex numbers!<br />Discriminant = ' + dis + ' <br />The Equation = ' + a + 'x&#178; + ' + b + 'x + ' + c + '<br />';
-        document.getElementById('x1').innerHTML='&nbsp; ';
-        document.getElementById('x2').innerHTML='&nbsp; ';
+        document.getElementById('x1').innerHTML="Alpha (x') = " + negB + "+" + "&radic;"+ posDis + "i" + "/" + 2*a;
+        document.getElementById('x2').innerHTML="Beta (x'') = "  + negB + "-" + "  &radic;"+ posDis + "i" + "/" + 2*a;
         document.getElementById('axis').innerHTML=' Axis of symmetry = '  + ax;
         document.getElementById('vertex').innerHTML=' Vertex = ('  + ax + ' ; ' + vx + ')';
         }
