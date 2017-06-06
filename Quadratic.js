@@ -1,6 +1,6 @@
 function calculate(){
 // User's input:
-     var a=prompt("enter value of a (must be numerical)"),
+ var a=prompt("enter value of a (must be numerical)"),
      b=prompt("enter value of b (must be numerical)"),
      c=prompt("enter value of c (must be numerical)"),
 // end of User's input. 
@@ -22,18 +22,18 @@ function calculate(){
      dis_sqrt=Math.sqrt(dis),
 // End of Discriminant.
 // 1st root:
-         x1=-b+dis_sqrt,
-         x1=x1/a2,
+    x1=-b+dis_sqrt,
+    x1=x1/a2,
 // End of 1st root.
 // 2nd root:
-        x2=-b-dis_sqrt,
-        x2=x2/a2,
+   x2=-b-dis_sqrt,
+   x2=x2/a2,
 // End of 2nd root.
 // Negative Discriminant:
-       negB= -1 *b,
+   negB= -1 *b,
 // end of Discriminant.
 //Positive Discriminant:
-       posDis = -1 * dis;
+   posDis = -1 * dis;
 //end of Positive Discriminant.
 
 //check the user's input:
