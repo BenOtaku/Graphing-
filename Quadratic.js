@@ -57,8 +57,8 @@ function calculate(){
  if(dis<0){
 //Display results:
         document.getElementById('Equation').innerHTML='No real roots exist since Discriminant < 0, which mean complex numbers!<br />Discriminant = ' + dis + ' <br />The Equation = ' + a + 'x&#178; + ' + b + 'x + ' + c + '<br />';
-        document.getElementById('x1').innerHTML="Alpha (x') = " + negB + "+" + "&radic;"+ posDis + "i" + "/" + 2*a;
-        document.getElementById('x2').innerHTML="Beta (x'') = "  + negB + "-" + "  &radic;"+ posDis + "i" + "/" + 2*a;
+        document.getElementById('x1').innerHTML="Alpha (x') = " + negB + "+" + "&radic;"+ posDis + "<i>i</i>" + "/" + 2*a;
+        document.getElementById('x2').innerHTML="Beta (x'') = "  + negB + "-" + "  &radic;"+ posDis + "<i>i</i>" + "/" + 2*a;
         document.getElementById('axis').innerHTML=' Axis of symmetry = '  + ax;
         document.getElementById('vertex').innerHTML=' Vertex = ('  + ax + ' ; ' + vx + ')';
         }
