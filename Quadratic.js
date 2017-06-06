@@ -26,8 +26,8 @@ function calculate(){
     x1=x1/a2,
 // End of 1st root.
 // 2nd root:
-   x2=-b-dis_sqrt,
-   x2=x2/a2,
+    x2=-b-dis_sqrt,
+    x2=x2/a2,
 // End of 2nd root.
 // Negative Discriminant:
    negB= -1 *b,
@@ -35,12 +35,14 @@ function calculate(){
 //Positive Discriminant:
    posDis = -1 * dis;
 //end of Positive Discriminant.
-
 //check the user's input:
+//if "a" is zero or null, return to the function:
      if(a == 0){
         alert("your don't have an input or it is zero so you need to input a number that is greater than zero!");
         return calculate();
         }
+// end of "a" verification.
+// if a,b or c is not a number:
      if(isNaN(a)){
           alert("Your input is a letter or special key, input a number therefore try again!");
           return calculate();
@@ -53,6 +55,7 @@ function calculate(){
           alert("Your input is a letter or special key, input a number therefore try again!");
           return calculate();
         }
+// end of cheking a,b or c.
 // end of check user's input.
  if(dis<0){
 //Display results:
@@ -62,7 +65,7 @@ function calculate(){
         document.getElementById('axis').innerHTML=' Axis of symmetry = '  + ax;
         document.getElementById('vertex').innerHTML=' Vertex = ('  + ax + ' ; ' + vx + ')';
         }
-     else if(dis===0){
+ else if(dis===0){
 //Display results:
         document.getElementById('Equation').innerHTML=" Equation = " + a + "x&#178; + " + b + "x + " + c + "<br />";
         document.getElementById('x1').innerHTML=" Alpha (x') = " + x1;
@@ -70,7 +73,7 @@ function calculate(){
         document.getElementById('vertex').innerHTML=' Vertex = ('  + ax + ' ; ' + vx + ')';
         document.getElementById('Type_root').innerHTML='The roots are repeated real number solutions because the Discriminant is zero';
      }
-     else{
+ else{
 //Display results:
         document.getElementById('Equation').innerHTML=" Equation = " + a + "x&#178; + " + b + "x + " + c + "<br />";
         document.getElementById('x1').innerHTML=" Alpha (x') = " + x1;
